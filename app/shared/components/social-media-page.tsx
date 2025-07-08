@@ -216,43 +216,47 @@ interface PostCreationProps {
 
 const PostCreation = ({ user }: PostCreationProps) => {
   return (
-    <div className="bg-white border-b border-gray-200  p-4">
+    <div className="bg-white border-b border-gray-200 p-3 sm:p-4">
       <div className="flex items-start space-x-3">
         <div className="flex-1">
           <textarea
             placeholder="Share something..."
-            className="w-full border border-gray-200 rounded-lg p-3 resize-none focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+            className="w-full border border-gray-200 rounded-lg p-3 resize-none focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent text-sm sm:text-base"
             rows={3}
           />
-          <div className="flex items-center justify-between mt-3">
-            <div className="flex items-center space-x-4">
-              <button className="flex items-center space-x-2 text-gray-500 hover:text-green-500">
-                <Image className="w-5 h-5" />
-                <span className="text-sm">Image</span>
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mt-3 space-y-3 sm:space-y-0">
+            {/* Action buttons - horizontal scroll on mobile */}
+            <div className="flex items-center space-x-2 sm:space-x-4 overflow-x-auto pb-2 sm:pb-0 scrollbar-hide">
+              <button className="flex items-center space-x-1 sm:space-x-2 text-gray-500 hover:text-green-500 whitespace-nowrap flex-shrink-0">
+                <Image className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm">Image</span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-500 hover:text-green-500">
-                <Video className="w-5 h-5" />
-                <span className="text-sm">Video</span>
+              <button className="flex items-center space-x-1 sm:space-x-2 text-gray-500 hover:text-green-500 whitespace-nowrap flex-shrink-0">
+                <Video className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm">Video</span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-500 hover:text-green-500">
-                <Paperclip className="w-5 h-5" />
-                <span className="text-sm">Attachment</span>
+              <button className="flex items-center space-x-1 sm:space-x-2 text-gray-500 hover:text-green-500 whitespace-nowrap flex-shrink-0">
+                <Paperclip className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm hidden sm:inline">Attachment</span>
+                <span className="text-xs sm:text-sm sm:hidden">File</span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-500 hover:text-green-500">
-                <Hash className="w-5 h-5" />
-                <span className="text-sm">Hashtag</span>
+              <button className="flex items-center space-x-1 sm:space-x-2 text-gray-500 hover:text-green-500 whitespace-nowrap flex-shrink-0">
+                <Hash className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm">Tag</span>
               </button>
-              <button className="flex items-center space-x-2 text-gray-500 hover:text-green-500">
-                <AtSign className="w-5 h-5" />
-                <span className="text-sm">Mention</span>
+              <button className="flex items-center space-x-1 sm:space-x-2 text-gray-500 hover:text-green-500 whitespace-nowrap flex-shrink-0">
+                <AtSign className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm">Mention</span>
               </button>
             </div>
-            <div className="flex items-center space-x-2">
-              <select className="border border-gray-200 rounded px-3 py-1 text-sm">
+            
+            {/* Privacy and Post button */}
+            <div className="flex items-center justify-between sm:justify-end space-x-2">
+              <select className="border border-gray-200 rounded px-2 py-1 sm:px-3 sm:py-1 text-xs sm:text-sm flex-shrink-0">
                 <option>Public</option>
                 <option>Private</option>
               </select>
-              <button className="bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition-colors">
+              <button className="bg-green-600 text-white px-3 py-1.5 sm:px-4 sm:py-2 rounded-lg text-xs sm:text-sm font-medium hover:bg-green-700 transition-colors flex-shrink-0">
                 Post
               </button>
             </div>
@@ -467,7 +471,7 @@ return (
     </div>
 
     {/* Feed - Always visible */}
-    <div className="flex-1 bg-gray-50 h-screen overflow-y-auto mt-16">
+    <div className="flex-1 bg-gray-50 h-screen overflow-y-auto mt-28  lg:mt-16">
       <Feed posts={mockPosts} user={mockUser} />
     </div>
 
