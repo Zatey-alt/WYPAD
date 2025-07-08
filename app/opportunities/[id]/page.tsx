@@ -5,11 +5,9 @@ import { useState } from 'react';
 import Link from 'next/link';
 import { useParams, useRouter } from 'next/navigation';
 import { 
-  ArrowLeft, 
   Building, 
   MapPin, 
   Clock, 
-  DollarSign, 
   Users, 
   Bookmark, 
   Share2, 

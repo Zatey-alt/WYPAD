@@ -1,4 +1,4 @@
-import Image from "next/image";
+import React from "react";
 import HeaderNavigation from "./shared/components/navbar";
 import SocialMediaApp from "./shared/components/social-media-page";
 
